@@ -83,9 +83,13 @@ void I2SAudioMediaPlayer::control(const media_player::MediaPlayerCall &call) {
 
 void I2SAudioMediaPlayer::redirect_https(){
   if (this->redirect_https_) {
-    if (this->current_url_.rfind("https", 0) == 0) { 
-      this->current_url_.replace(0, 5, "http");
+    std::string url = this->current_url_;
+
+    if (url.rfind("https", 0) == 0) { 
+      url.replace(0, 5, "http");
     }  
+    
+    this->current_url_=url;
 }
 
 
