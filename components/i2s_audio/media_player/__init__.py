@@ -77,7 +77,7 @@ CONFIG_SCHEMA = cv.All(
                     cv.Optional(CONF_I2S_COMM_FMT, default="msb"): cv.one_of(
                         *I2C_COMM_FMT_OPTIONS, lower=True
                     ),
-                    cv.Optional(CONF_REDIRECT_HTTPS, default="False"): cv.bool,
+                    cv.Optional(CONF_REDIRECT_HTTPS, default="False"): cv.boolean,
                 }
             ).extend(cv.COMPONENT_SCHEMA),
         },
