@@ -174,6 +174,7 @@ void I2SAudioMediaPlayer::start_() {
   this->high_freq_.start();
   this->audio_->setVolume(remap<uint8_t, float>(this->volume, 0.0f, 1.0f, 0, 21));
   if (this->current_url_.has_value()) {
+    redirect_https();
     this->audio_->connecttohost(this->current_url_.value().c_str());
     this->state = media_player::MEDIA_PLAYER_STATE_PLAYING;
     this->publish_state();
