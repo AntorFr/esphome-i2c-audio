@@ -85,7 +85,8 @@ void I2SAudioMediaPlayer::redirect_https(){
   if (this->redirect_https_) {
     if (this->current_url_.value().rfind("https", 0) == 0) { 
       this->current_url_.value().replace(0, 5, "http");
-    }  
+    }
+  ESP_LOGD(TAG, "  Redirect Media URL: %s", this->current_url.value().c_str());  
 }
 
 
